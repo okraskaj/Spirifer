@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'spirifer'
+    'spirifer',
+    'posts.apps.PostsConfig',
+
 ]
 
 MIDDLEWARE = [
