@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'spirifer',
     'posts.apps.PostsConfig',
+    'gallery.apps.GalleryConfig',
 
 ]
 
