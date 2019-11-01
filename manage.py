@@ -4,7 +4,6 @@ import os
 import sys
 
 
-
 def main():
     sys.path.append(os.getcwd() + r"/spirifer")
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'spirifer.settings')

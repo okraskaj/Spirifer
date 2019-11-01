@@ -1,4 +1,5 @@
 from django.views.generic import DetailView, ListView
+
 from .models import Gallery
 
 
@@ -11,6 +12,7 @@ class GalleryListView(ListView):
         context['galleries'] = Gallery.objects.all()
         context['title'] = 'List of all galleries'
         return context
+
 
 class GalleryDetailsView(DetailView):
     template_name = "gallery/details.html"

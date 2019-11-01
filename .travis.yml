@@ -1,15 +1,27 @@
+notifications:
+  email:
+    on_success: never # default: change
+    on_failure: always # default: always
 sudo: true
-before_install:
-  - sudo apt-get update -qq
-  - sudo apt-get install -qq build-essential gettext python-dev zlib1g-dev libpq-dev xvfb
-  - sudo apt-get install -qq libtiff4-dev libjpeg8-dev libfreetype6-dev liblcms1-dev libwebp-dev
-  - sudo apt-get install -qq graphviz-dev python-setuptools python3-dev python-virtualenv python-pip
-  - sudo apt-get install -qq firefox automake libtool libreadline6 libreadline6-dev libreadline-dev
-  - sudo apt-get install -qq libsqlite3-dev libxml2 libxml2-dev libssl-dev libbz2-dev wget curl llvm
 language: python
-python:
-  - "3.6"
+cache:
+  - pip
+
+matrix:
+  fast_finish: true
+  include:
+    - python: 3.6
+    - python: 3.7
+      dist: xenial
+
+before_install:
+  - travis_retry pip install --upgrade pip setuptools py
+  - travis_retry pip install twine wheel
+
 install:
-  - pip install -r requirements/local.txt
+  - travis_retry pip install -r requirements.txt
+
 script:
-  - "pytest"
+  - isort -rc -c -df **/*.py
+  - pycodestyle --exclude='**/migrations/*' **/*.py
+
