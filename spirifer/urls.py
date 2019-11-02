@@ -16,8 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+from .views import HomePageView
+
 urlpatterns = [
     path('posts/', include('posts.urls')),
     path('gallery/', include('gallery.urls')),
+    path('', HomePageView.as_view(), name='index'),
     path('admin/', admin.site.urls),
 ]
