@@ -90,3 +90,38 @@ body {
     margin-top: 7rem;
   }
 }
+
+.navbar-brand{
+  font-weight: 400;
+  font-size: 1.6rem;
+  letter-spacing: 5px;
+  margin-bottom: 0;
+  display: inline-block;
+  position: relative;
+}
+
+
+.nav-link {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, .5);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+  padding: 0 10px;
+  margin: 0 10px;
+  display: inline-block;
+  position: relative;
+  opacity: 0.75;
+}
+.nav-link{
+    position:relative;
+}
+.nav-link:hover::after{
+    content:'';
+    position:absolute;
+    width: 100%;
+    height: 0;
+    left:0;
+    bottom:0; /*Change this to increase/decrease distance*/
+    border-bottom: 2px solid #fafafa;
+}
