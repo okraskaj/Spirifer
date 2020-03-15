@@ -29,4 +29,4 @@ python manage.py runserver
 
 ## Authors
 * [Jan Okraska](https://github.com/okraskaj)
-* [Marcjanna Jędrych](https:/github.com/MJedr)
+* [Marcjanna Jędrych](https://github.com/MJedr)
